@@ -5,7 +5,7 @@ void mul(int a, int b) {
         printf("%d\n", a * b);
 
 }
-void convert(char *st1, char *st2) {
+void convert2(char *st1, char *st2) {
 	char *ones[19] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
 	char *tens[8] = {"twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 	int numb1 = 0;
@@ -92,9 +92,17 @@ void convert(char *st1, char *st2) {
         }
 	mul(numb1,numb2);
 }
+void convert(char *st) {
+	char n[30];
+	strcpy(n, st);
+        char *st1 = strtok(n, " ");
+	char *st2 = strtok(NULL, " ");
+        convert2(st1, st2); 
+
+}
 
 int main() {
-	convert("Five", "three");
-	convert("Twenty", "fifteen");		
+	convert("Five three");
+	convert("Twenty fifteen");		
 }
 
