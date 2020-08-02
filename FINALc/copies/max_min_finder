@@ -1,0 +1,23 @@
+
+#!/bin/bash
+
+awk 'BEGIN {max = -1; min = 100} 
+	$1 =="ATOM" {
+		max = max<$7 ? $7:max;
+		min= (min==100||min>$7 ? $7 : min)
+	}
+	 END { printf"max of x = %3.f\nmin of x = %.3f\n",max,min}' 4HKD.pdb
+
+awk 'BEGIN {max = -1; min = 100}
+        $1 =="ATOM" {
+                max = max<$8 ? $8:max;
+                min= (min==100||min>$8 ? $8 : min)
+        }
+         END { printf"max of y = %3.f\nmin of y = %.3f\n",max,min}' 4HKD.pdb
+awk 'BEGIN {max = -1; min = 100}
+        $1 =="ATOM" {
+                max = max<$9 ? $9:max;
+                min= (min==100||min>$9 ? $9 : min)
+        }
+         END { printf"max of z = %3.f\nmin of z = %.3f\n",max,min}' 4HKD.pdb
+
