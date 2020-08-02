@@ -1,0 +1,12 @@
+awk '/HETATM/ {sum += $7; count++}
+	
+	END {printf("mean value of x = %3.f\n",sum/count)}' 4HKD.pdb
+
+awk '/HETATM/ {sum += $8; count++}
+
+        END {printf("mean value of y = %3.f\n",sum/count)}' 4HKD.pdb
+
+awk '/HETATM/ {sum += $9; count++}
+
+        END {printf("mean value of z = %3.f\n",sum/count)}' 4HKD.pdb
+
